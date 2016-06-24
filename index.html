@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>jquery_partie3_exo4</title>
+  <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+  <script src="assets/lib/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+  <input type="Button" id="hauteur" value="hauteur" />
+  <input type="Button" id="vert" value="vert" />
+  <input type="Button" id="init_col" value="init_col" />
+  <input type="Button" id="disp" value="disp" />
+  <input type="Button" id="reap" value="reap" />
+  <div id="rectangle"></div>
+  <script>
+  $(document).ready(function(){
+    var hauteur = 10;
+    $("#vert").click(function(){
+      $("#rectangle").css({"background-color":"green"});
+    });
+    $("#init_col").click(function(){
+      $("#rectangle").css({"background-color":""});
+    });
+    $("#disp").click(function(){
+      $("#rectangle").hide();
+    });
+    $("#reap").click(function(){
+      $("#rectangle").show();
+    });
+    $('#hauteur').click(function(){
+      //Récupérer la taille (h) du rectangle
+      var nombre = $('#rectangle').height();
+      //Si la hauteur >= 100
+      if (nombre >= 100){
+        //La hauteur = 10px
+        nombre = 10;
+      } else {
+        //La hauteur prend 10
+        nombre += 10;
+      }
+      $('#rectangle').css('height',+ nombre +'px');
+    });
+  });
+</script>
+</body>
+</html>
